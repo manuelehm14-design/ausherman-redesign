@@ -35,7 +35,7 @@ body {
     font-family: var(--font-body);
     color: var(--text-main);
     line-height: 1.6;
-    background-color: var(--bg-main); /* El color base ya no es blanco */
+    background-color: var(--bg-main);
 }
 
 h1, h2, h3, h4 {
@@ -81,7 +81,7 @@ ul {
    4. NAVEGACIÓN (Header)
    ========================================= */
 header {
-    background-color: var(--white); /* Mantenemos el menú blanco para que el logo resalte */
+    background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -122,7 +122,7 @@ nav {
    5. SECCIÓN HERO
    ========================================= */
 #hero {
-    background-color: var(--primary-color); /* Verde Bosque */
+    background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
     padding: 8rem 2rem;
@@ -184,13 +184,13 @@ nav {
 }
 
 .service-card {
-    background-color: var(--white); /* Tarjetas blancas sobre fondo gris claro */
+    background-color: var(--white);
     border-radius: 8px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
-    border-top: 4px solid var(--accent-color); /* Línea verde arriba */
+    border-top: 4px solid var(--accent-color);
 }
 
 .service-card:hover {
@@ -224,11 +224,11 @@ nav {
    ========================================= */
 .service-icon {
     font-size: 2.5rem;
-    color: var(--primary-color); /* Icono verde */
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     display: inline-block;
     padding: 1rem;
-    background-color: #dcedc8; /* Fondo verde muy claro para contrastar */
+    background-color: #dcedc8;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
@@ -241,7 +241,7 @@ nav {
    8. SECCIÓN COMUNIDAD
    ========================================= */
 .community-section {
-    background-color: var(--secondary-color); /* Fondo Gris Medio para variar */
+    background-color: var(--secondary-color);
     color: var(--white);
     padding: var(--section-padding);
 }
@@ -348,7 +348,7 @@ nav {
 .team-photo {
     width: 120px;
     height: 120px;
-    background-color: var(--secondary-color); /* Gris para la foto por ahora */
+    background-color: var(--secondary-color);
     border-radius: 50%;
     margin: 0 auto 1rem;
     display: flex;
@@ -390,7 +390,7 @@ nav {
 .contact-info {
     flex: 1;
     padding: 4rem;
-    background-color: var(--primary-color); /* Verde Bosque */
+    background-color: var(--primary-color);
     color: var(--white);
 }
 
@@ -414,7 +414,7 @@ nav {
 }
 
 .info-item i {
-    color: #aed581; /* Un verde clarito para los iconos de contacto */
+    color: #aed581;
     font-size: 1.5rem;
 }
 
@@ -458,7 +458,7 @@ nav {
    11. FOOTER (Pie de Página)
    ========================================= */
 footer {
-    background-color: var(--bg-dark); /* Gris Oscuro */
+    background-color: var(--bg-dark);
     color: var(--white);
     padding: 4rem 2rem 1rem 2rem;
 }
@@ -523,7 +523,36 @@ footer {
 }
 
 /* =========================================
-   12. MEDIA QUERIES (Móviles)
+   12. BOTÓN FLOTANTE (Fixed Action Button)
+   ========================================= */
+.floating-call-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 2000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.floating-call-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-hover);
+}
+
+.floating-call-btn i {
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   13. MEDIA QUERIES (Móviles)
    ========================================= */
 @media (max-width: 900px) {
     .contact-container {
@@ -548,5 +577,14 @@ footer {
     }
     #hero h1 {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-call-btn span {
+        display: none;
+    }
+    .floating-call-btn {
+        padding: 15px; 
     }
 }
