@@ -1,13 +1,15 @@
 /* =========================================
-   1. VARIABLES (Colores de la marca y fuentes)
+   1. VARIABLES (Nueva Paleta: Verde, Gris)
    ========================================= */
 :root {
-    --primary-color: #1a2942;
-    --accent-color: #0066cc;
-    --accent-hover: #004c99;
-    --bg-light: #f8f9fa;
-    --text-main: #333333;
-    --text-light: #666666;
+    --primary-color: #2d5a27;      /* Verde Bosque Principal */
+    --accent-color: #3e7d37;       /* Verde Claro para Botones */
+    --accent-hover: #1f401b;       /* Verde Oscuro para Hover */
+    --secondary-color: #4a4a4a;    /* Gris Medio para contrastes */
+    --bg-main: #eaeaec;            /* Gris Claro (Reemplaza el fondo blanco puro) */
+    --bg-dark: #2c2c2c;            /* Gris Oscuro (Para el Footer) */
+    --text-main: #222222;
+    --text-light: #555555;
     --white: #ffffff;
     
     --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -33,7 +35,7 @@ body {
     font-family: var(--font-body);
     color: var(--text-main);
     line-height: 1.6;
-    background-color: var(--white);
+    background-color: var(--bg-main); /* El color base ya no es blanco */
 }
 
 h1, h2, h3, h4 {
@@ -72,14 +74,14 @@ ul {
 }
 
 .submit-btn {
-    width: 100%; /* Botón de formulario ancho completo */
+    width: 100%;
 }
 
 /* =========================================
    4. NAVEGACIÓN (Header)
    ========================================= */
 header {
-    background-color: var(--white);
+    background-color: var(--white); /* Mantenemos el menú blanco para que el logo resalte */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -108,6 +110,7 @@ nav {
 
 .nav-links a {
     font-weight: 500;
+    color: var(--secondary-color);
     transition: color 0.3s ease;
 }
 
@@ -119,7 +122,7 @@ nav {
    5. SECCIÓN HERO
    ========================================= */
 #hero {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Verde Bosque */
     color: var(--white);
     text-align: center;
     padding: 8rem 2rem;
@@ -156,7 +159,6 @@ nav {
    ========================================= */
 .services-section {
     padding: var(--section-padding);
-    background-color: var(--bg-light);
     text-align: center;
 }
 
@@ -182,13 +184,13 @@ nav {
 }
 
 .service-card {
-    background-color: var(--white);
+    background-color: var(--white); /* Tarjetas blancas sobre fondo gris claro */
     border-radius: 8px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
-    border-top: 4px solid var(--accent-color);
+    border-top: 4px solid var(--accent-color); /* Línea verde arriba */
 }
 
 .service-card:hover {
@@ -199,6 +201,7 @@ nav {
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 .service-card p {
@@ -221,11 +224,11 @@ nav {
    ========================================= */
 .service-icon {
     font-size: 2.5rem;
-    color: var(--accent-color);
+    color: var(--primary-color); /* Icono verde */
     margin-bottom: 1.5rem;
     display: inline-block;
     padding: 1rem;
-    background-color: #e6f0fa;
+    background-color: #dcedc8; /* Fondo verde muy claro para contrastar */
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
@@ -238,7 +241,7 @@ nav {
    8. SECCIÓN COMUNIDAD
    ========================================= */
 .community-section {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color); /* Fondo Gris Medio para variar */
     color: var(--white);
     padding: var(--section-padding);
 }
@@ -274,7 +277,7 @@ nav {
 }
 
 .community-content p {
-    color: #cccccc;
+    color: #eeeeee;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
@@ -319,16 +322,58 @@ nav {
     margin-bottom: 1rem;
 }
 
-.image-placeholder:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+/* =========================================
+   9. SECCIÓN ABOUT (El Equipo)
+   ========================================= */
+.about-section {
+    padding: var(--section-padding);
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.team-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    background-color: var(--secondary-color); /* Gris para la foto por ahora */
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 3rem;
+}
+
+.role {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.certs {
+    font-size: 0.85rem;
+    color: var(--text-light);
 }
 
 /* =========================================
-   9. SECCIÓN DE CONTACTO
+   10. SECCIÓN DE CONTACTO
    ========================================= */
 .contact-section {
     padding: var(--section-padding);
-    background-color: var(--bg-light);
 }
 
 .contact-container {
@@ -345,7 +390,7 @@ nav {
 .contact-info {
     flex: 1;
     padding: 4rem;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Verde Bosque */
     color: var(--white);
 }
 
@@ -356,7 +401,7 @@ nav {
 }
 
 .contact-info p {
-    color: #cccccc;
+    color: #eeeeee;
     margin-bottom: 3rem;
 }
 
@@ -369,7 +414,7 @@ nav {
 }
 
 .info-item i {
-    color: var(--accent-color);
+    color: #aed581; /* Un verde clarito para los iconos de contacto */
     font-size: 1.5rem;
 }
 
@@ -386,7 +431,7 @@ nav {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .form-group input, 
@@ -394,25 +439,26 @@ nav {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 4px;
     font-family: var(--font-body);
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    background-color: var(--bg-main);
 }
 
 .form-group input:focus, 
 .form-group select:focus, 
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
+    border-color: var(--primary-color);
 }
 
 /* =========================================
-   10. FOOTER (Pie de Página)
+   11. FOOTER (Pie de Página)
    ========================================= */
 footer {
-    background-color: #111a2a; /* Aún más oscuro que el primary-color */
+    background-color: var(--bg-dark); /* Gris Oscuro */
     color: var(--white);
     padding: 4rem 2rem 1rem 2rem;
 }
@@ -463,7 +509,7 @@ footer {
 
 .areas-list {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide las ciudades en 2 columnas */
+    grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
     color: #aaaaaa;
 }
@@ -477,17 +523,15 @@ footer {
 }
 
 /* =========================================
-   11. MEDIA QUERIES (Móviles)
+   12. MEDIA QUERIES (Móviles)
    ========================================= */
 @media (max-width: 900px) {
     .contact-container {
         flex-direction: column;
     }
-    
     .contact-info, .contact-form-wrapper {
         padding: 2rem;
     }
-    
     .footer-container {
         grid-template-columns: 1fr;
     }
@@ -498,12 +542,10 @@ footer {
         flex-direction: column;
         gap: 2rem;
     }
-    
     nav {
         flex-direction: column;
         gap: 1rem;
     }
-    
     #hero h1 {
         font-size: 2rem;
     }
