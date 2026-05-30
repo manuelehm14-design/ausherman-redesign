@@ -148,3 +148,72 @@ nav {
     text-transform: uppercase;
     color: #ffd700; /* Color dorado para las estrellas/reseñas */
 }
+
+/* =========================================
+   6. SECCIÓN DE SERVICIOS (Tarjetas)
+   ========================================= */
+.services-section {
+    padding: var(--section-padding);
+    background-color: var(--bg-light); /* Fondo gris claro para contrastar con el Hero */
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* El Grid Layout: Crea columnas automáticas */
+.services-grid {
+    display: grid;
+    /* Esto hace que sea responsivo: mínimo 300px por tarjeta, máximo 1 fracción del espacio */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Espacio entre las tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Diseño de la Tarjeta */
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra muy sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    border-top: 4px solid var(--accent-color); /* Detalle de color en el borde superior */
+}
+
+/* Efecto al pasar el mouse por encima */
+.service-card:hover {
+    transform: translateY(-10px); /* La tarjeta "flota" hacia arriba */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.learn-more {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.learn-more:hover {
+    color: var(--primary-color);
+}
