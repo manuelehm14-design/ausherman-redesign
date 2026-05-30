@@ -36,7 +36,7 @@ body {
     background-color: var(--white);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -54,18 +54,25 @@ ul {
 /* =========================================
    3. BOTONES GLOBALES
    ========================================= */
-.cta-button {
+.cta-button, .submit-btn {
     display: inline-block;
     background-color: var(--accent-color);
     color: var(--white);
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
     font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.cta-button:hover, .submit-btn:hover {
     background-color: var(--accent-hover);
+}
+
+.submit-btn {
+    width: 100%; /* Botón de formulario ancho completo */
 }
 
 /* =========================================
@@ -109,7 +116,7 @@ nav {
 }
 
 /* =========================================
-   5. SECCIÓN HERO (Primera impresión)
+   5. SECCIÓN HERO
    ========================================= */
 #hero {
     background-color: var(--primary-color);
@@ -145,7 +152,7 @@ nav {
 }
 
 /* =========================================
-   6. SECCIÓN DE SERVICIOS (Tarjetas)
+   6. SECCIÓN DE SERVICIOS
    ========================================= */
 .services-section {
     padding: var(--section-padding);
@@ -210,7 +217,7 @@ nav {
 }
 
 /* =========================================
-   7. ESTILOS DE ICONOS (Servicios)
+   7. ICONOS DE SERVICIOS
    ========================================= */
 .service-icon {
     font-size: 2.5rem;
@@ -228,7 +235,7 @@ nav {
 }
 
 /* =========================================
-   8. SECCIÓN COMUNIDAD (Flexbox Split)
+   8. SECCIÓN COMUNIDAD
    ========================================= */
 .community-section {
     background-color: var(--primary-color);
@@ -316,9 +323,188 @@ nav {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* =========================================
+   9. SECCIÓN DE CONTACTO
+   ========================================= */
+.contact-section {
+    padding: var(--section-padding);
+    background-color: var(--bg-light);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-info {
+    flex: 1;
+    padding: 4rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.contact-info h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #cccccc;
+    margin-bottom: 3rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.info-item i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.contact-form-wrapper {
+    flex: 1.5;
+    padding: 4rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* =========================================
+   10. FOOTER (Pie de Página)
+   ========================================= */
+footer {
+    background-color: #111a2a; /* Aún más oscuro que el primary-color */
+    color: var(--white);
+    padding: 4rem 2rem 1rem 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.footer-col p {
+    color: #aaaaaa;
+    margin-top: 1rem;
+}
+
+.footer-col ul {
+    margin-top: 1rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul a {
+    color: #aaaaaa;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--white);
+}
+
+.areas-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide las ciudades en 2 columnas */
+    gap: 0.5rem;
+    color: #aaaaaa;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #777777;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   11. MEDIA QUERIES (Móviles)
+   ========================================= */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info, .contact-form-wrapper {
+        padding: 2rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .community-container {
         flex-direction: column;
         gap: 2rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #hero h1 {
+        font-size: 2rem;
     }
 }
