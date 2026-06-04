@@ -16,6 +16,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
+                <li><a href="#careers">Careers</a></li> <!-- Enlace actualizado -->
                 <li><a href="#community">Community</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -133,6 +134,152 @@
         </div>
     </section>
 
+    <!-- =========================================
+       NUEVA SECCIÓN CAREERS (Superando el original)
+       ========================================= -->
+    <section id="careers" class="careers-section">
+        <div class="section-header">
+            <h2>Join Our Team</h2>
+            <p>Are you the next Person to take great care of our Customers?</p>
+        </div>
+
+        <!-- 1. Qué ofrecemos (Modernizado con Cards) -->
+        <div class="subsection-container">
+            <h3 class="subsection-title">What We Offer</h3>
+            <div class="benefits-grid">
+                <div class="benefit-card"><i class="fa-solid fa-money-bill-wave"></i><span>$20.00 - $28.00/hr starting pay (based on exp.)</span></div>
+                <div class="benefit-card"><i class="fa-solid fa-chart-line"></i><span>Performance Raises</span></div>
+                <div class="benefit-card"><i class="fa-solid fa-gift"></i><span>Production Bonuses</span></div>
+                <div class="benefit-card"><i class="fa-solid fa-tooth"></i><span>Dental & Vision Insurance</span></div>
+                <div class="benefit-card"><i class="fa-solid fa-umbrella-beach"></i><span>Paid Vacation (after 90 days)</span></div>
+                <div class="benefit-card"><i class="fa-solid fa-piggy-bank"></i><span>Retirement Fund Match</span></div>
+            </div>
+        </div>
+
+        <!-- 2. Pestañas de Roles (Funcionalidad Interactiva) -->
+        <div class="subsection-container">
+            <h3 class="subsection-title">Available Positions</h3>
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="apprentice">APPRENTICE</button>
+                    <button class="tab-btn" data-tab="painter">EXPERIENCED PAINTER</button>
+                    <button class="tab-btn" data-tab="leader">CREW LEADER</button>
+                </div>
+                <div class="tabs-content">
+                    <div id="apprentice" class="tab-pane active">
+                        <ul>
+                            <li>Full Time Position</li>
+                            <li>Willingness to Learn the Trade</li>
+                            <li>Move and use ladders (up to 40') and power equipment</li>
+                            <li>Valid Drivers License</li>
+                        </ul>
+                    </div>
+                    <div id="painter" class="tab-pane">
+                        <ul>
+                            <li>Minimum 2+ years professional experience</li>
+                            <li>Expertise in prep, brush, roll, and spray</li>
+                            <li>Ability to work independently and maintain quality</li>
+                        </ul>
+                    </div>
+                    <div id="leader" class="tab-pane">
+                        <ul>
+                            <li>5+ years experience & strong leadership skills</li>
+                            <li>Ability to manage crews and communicate with customers</li>
+                            <li>OSHA certification preferred</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="drug-testing-text">Our company conducts random drug testing.</p>
+        </div>
+
+        <!-- 3. Formulario Multi-paso (Funcionalidad Avanzada) -->
+        <div class="application-container">
+            <h3 class="subsection-title">Apply Now</h3>
+            
+            <!-- Barra de Progreso -->
+            <div class="progress-bar">
+                <div class="step-circle active" data-step="1">1</div>
+                <div class="step-line"></div>
+                <div class="step-circle" data-step="2">2</div>
+                <div class="step-line"></div>
+                <div class="step-circle" data-step="3">3</div>
+            </div>
+
+            <form id="employment-form" class="multi-step-form">
+                
+                <!-- PASO 1: Info Personal -->
+                <div class="form-step active" id="step-1">
+                    <h4>Step 1: Contact & Position</h4>
+                    <div class="form-group">
+                        <label for="emp-position">Position *</label>
+                        <select id="emp-position" name="position" required>
+                            <option value="" disabled selected>-- Select --</option>
+                            <option value="apprentice">Apprentice</option>
+                            <option value="painter">Experienced Painter</option>
+                            <option value="leader">Crew Leader</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="emp-fname">First Name *</label>
+                            <input type="text" id="emp-fname" name="fname" required>
+                        </div>
+                        <div class="form-group flex-1">
+                            <label for="emp-lname">Last Name *</label>
+                            <input type="text" id="emp-lname" name="lname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-phone">Phone *</label>
+                        <input type="tel" id="emp-phone" name="phone" placeholder="(xxx) xxx-xxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-email">Email *</label>
+                        <input type="email" id="emp-email" name="email" required>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="next-btn submit-btn">Next Step &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- PASO 2: Elegibilidad -->
+                <div class="form-step" id="step-2">
+                    <h4>Step 2: Eligibility</h4>
+                    <div class="form-group radio-group">
+                        <label>Are You a United States Citizen? *</label>
+                        <div class="radio-options">
+                            <input type="radio" id="citizen-yes" name="citizen" value="yes" required> <label for="citizen-yes">Yes</label>
+                            <input type="radio" id="citizen-no" name="citizen" value="no"> <label for="citizen-no">No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emp-experience">Tell us about your painting experience</label>
+                        <textarea id="emp-experience" name="experience" rows="4"></textarea>
+                    </div>
+                    <div class="form-navigation flex justify-between">
+                        <button type="button" class="prev-btn cta-button-alt">&larr; Previous</button>
+                        <button type="button" class="next-btn submit-btn">Next Step &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- PASO 3: Enviar -->
+                <div class="form-step" id="step-3">
+                    <h4>Step 3: Finalize</h4>
+                    <div class="form-group">
+                        <label for="emp-message">Message for the office</label>
+                        <textarea id="emp-message" name="message" rows="4"></textarea>
+                    </div>
+                    <p class="disclaimer text-light">Complete our application and submit it to the Office for consideration. Incomplete applications will not be considered.</p>
+                    <div class="form-navigation flex justify-between">
+                        <button type="button" class="prev-btn cta-button-alt">&larr; Previous</button>
+                        <button type="submit" class="submit-btn final-submit-btn">Submit Application</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-info">
@@ -199,6 +346,7 @@
                     <li><a href="#hero-modern">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
                     <li><a href="#community">Community</a></li>
                     <li><a href="#contact">Get an Estimate</a></li>
                 </ul>
